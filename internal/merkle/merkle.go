@@ -138,10 +138,10 @@ func MakeProof(blocks []string, index int) (Proof, error) {
 		var side string
 		if idx%2 == 0 {
 			sibIdx = idx + 1
-			side = SideLeft
+			side = SideRight
 		} else {
 			sibIdx = idx - 1
-			side = SideRight
+			side = SideLeft
 		}
 		steps = append(steps, ProofStep{Sibling: level[sibIdx].Hex(), Side: side})
 		nxt := make([]Hash, len(level)/2)
